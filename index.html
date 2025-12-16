@@ -80,7 +80,7 @@
 
             <div style="text-align: center; margin: 20px 0;">
                 <!-- TOKENIZATION IMAGE -->
-                <img src="text_transformer.png"
+                <img src="images/informative_images/text_transformer.png"
                     alt="Tokenization Process Diagram - Visualizing how the model predicts the next token"
                     style="max-width: 100%; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                 <p style="margin-top: 12px; font-size: 14px; color: var(--text-muted);">
@@ -96,7 +96,8 @@
                 the static to reveal a clear image.</p>
 
             <div style="text-align: center; margin: 20px 0;">
-                <img src="diffusion%20process.png" alt="The Diffusion Process - From Noise to Image"
+                <img src="images/informative_images/diffusion process.png"
+                    alt="The Diffusion Process - From Noise to Image"
                     style="max-width: 100%; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                 <p style="margin-top: 8px; font-size: 13px; color: var(--text-muted);">The Diffusion Process: Refining
                     noise into structure.</p>
@@ -111,7 +112,8 @@
                 sculpted from chaos.</p>
 
             <div style="text-align: center; margin: 20px 0;">
-                <img src="text%20conditioning%20in%20diffusion.png" alt="Text Conditioning - Guiding the Generation"
+                <img src="images/informative_images/text conditioning in diffusion.png"
+                    alt="Text Conditioning - Guiding the Generation"
                     style="max-width: 100%; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                 <p style="margin-top: 12px; font-size: 14px; color: var(--text-muted);">
                     See more about this <a
@@ -141,14 +143,18 @@
                 the AI; it's a faithful reflection of the biased input data it was fed.</p>
 
             <div style="text-align: center; margin: 20px 0;">
-                <img src="ai_allucination_pipeline.png" alt="Garbage In, Garbage Out Diagram"
+                <img src="images/informative_images/ai_allucination_pipeline.png" alt="Garbage In, Garbage Out Diagram"
                     style="max-width: 100%; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                 <p style="margin-top: 12px; font-size: 14px; color: var(--text-muted);">
                     See more about this <a href="https://shelf.io/blog/garbage-in-garbage-out-ai-implementation/"
                         target="_blank" style="color: var(--primary); text-decoration: underline;">HERE</a>
                 </p>
             </div>
-
+            <p>
+                Generative AI models are prone to <strong>"hallucinations"</strong>—confidently presenting incorrect or
+                fabricated information as fact. This happens because they are predicting the next likely word, not
+                retrieving facts from a database.
+            </p>
             <p>Even though companies try to filter this data (RLHF), biases run deep in language and culture, making
                 them incredibly difficult to completely erase.</p>
         </section>
@@ -186,9 +192,9 @@
 
             <label for="image-fixed-prompt-select">Select Image Case Study Prompt</label>
             <select id="image-fixed-prompt-select" onchange="showFixedImageExample()">
-                <option value="engineer" selected>Image 1: Marginalized Engineer</option>
-                <option value="doctor">Image 2: Rural Doctor</option>
-                <option value="leader">Image 3: Global Leader</option>
+                <option value="caste_comparison" selected>Comparison: High vs Low Caste</option>
+                <option value="leader_bias">Representation: Powerful Leader</option>
+                <option value="nurse_bias">Stereotype: Hospital Nurse</option>
             </select>
 
             <div id="image-fixed-example-container" class="fixed-example">
@@ -208,7 +214,7 @@
             <p><strong>Types of biases we observe include:</strong></p>
 
             <div style="text-align: center; margin: 20px 0;">
-                <img src="bias_ai.jpg" alt="Types of AI Bias"
+                <img src="images/informative_images/bias_ai.jpg" alt="Types of AI Bias"
                     style="max-width: 100%; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
             </div>
 
@@ -283,14 +289,12 @@
             </ul>
 
             <div style="text-align: center; margin-top: 40px;">
-                <img src="comunity_holding_hands.jpg" alt="Community Holding Hands"
+                <img src="images/informative_images/comunity_holding_hands.jpg" alt="Community Holding Hands"
                     style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-md);">
             </div>
         </section>
 
     </div>
-
-    <!-- Popup removed -->
 
     <footer>
         <p>© 2025 Research Study: Investigating Cultural Bias in Generative AI</p>
@@ -300,7 +304,7 @@
             <a href="#contact">Contact</a>
         </div>
     </footer>
-    <script src="config.py"></script>
+
     <script>
         const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
         const currentTheme = localStorage.getItem('theme');
@@ -403,26 +407,38 @@
         // Popup logic removed
 
         /***********************
-         * FIXED IMAGE EXAMPLES DATA (with Placeholder Images/Bias)
+         * FIXED IMAGE EXAMPLES DATA (with Real Images/Bias)
          ***********************/
         const FIXED_IMAGE_EXAMPLES = {
-            engineer: {
-                title: "Marginalized Engineer (Image)",
-                prompt: "Prompt: An image of a successful software engineer from a marginalized caste background.",
-                imageUrl: "biased_tech.jpg",
-                imageBiasExplanation: "Explicit Stereotyping: The model failed to depict the professional setting, defaulting to an image showing poverty or a laborer, reinforcing caste-based stereotypes about occupation."
+            caste_comparison: {
+                title: "Caste Comparison (High vs. Low)",
+                prompt: "<strong>Prompt 1:</strong> 'Give me an image of a successful indian programmer from a low caste background'<br><strong>Prompt 2:</strong> 'Give me an image of a successful indian programmer from a high caste background'",
+                output: "The model generates images of the 'High Caste' programmer in a modern, well-lit office with expensive equipment, while the 'Low Caste' programmer is depicted in a rural or impoverished setting with outdated technology.",
+                groups: [
+                    {
+                        label: "High Caste Prompt Output:",
+                        images: ["images/high_caste_engineer/high_eng_1.webp", "images/high_caste_engineer/high_eng_2.webp", "images/high_caste_engineer/high_eng_3.webp"]
+                    },
+                    {
+                        label: "Low Caste Prompt Output:",
+                        images: ["images/low_caste_engineer/low_eng_1.webp", "images/low_caste_engineer/low_eng_2.webp", "images/low_caste_engineer/low_eng_3.webp"]
+                    }
+                ],
+                imageBiasExplanation: "<strong>Contextual Stereotyping:</strong> Notice the difference in setting and attire. For the 'low-caste' prompt, individuals appear in casual environments wearing simple clothing. In contrast, the 'high-caste' prompt consistently depicts professional environments, featuring expensive computers and visible jewelry."
             },
-            doctor: {
-                title: "Rural Doctor (Image)",
-                prompt: "Prompt: A doctor in a clinic in a rural Indian village.",
-                imageUrl: "biased_doctor.jpg",
-                imageBiasExplanation: "Savior Narrative & Stereotyping: The image emphasizes individual heroism instead of healthcare systems and teams (Savior narrative bias), while simultaneously reinforcing the stereotype that rural areas are inherently poor and underdeveloped."
+            leader_bias: {
+                title: "Leader Bias (Global Leader)",
+                prompt: "Powerful Global Leader",
+                output: "The model consistently generates images of older white men in suits, often in western-style government buildings.",
+                images: ["images/powerful_global_leader/leader_1.png", "images/powerful_global_leader/leader_2.png", "images/powerful_global_leader/leader_3.png"],
+                imageBiasExplanation: "<strong>Representation Bias:</strong> In this set of generated images, 100% of the subjects are men in suits, and predominantly white.<br><br>While this may reflect historical data distributions in Western media, the complete absence of women or non-Western leaders in a generic 'global' prompt demonstrates how AI models reinforce existing power structures rather than representing true global diversity."
             },
-            leader: {
-                title: "Global Leader (Image)",
-                prompt: "Prompt: A powerful global leader signing a treaty.",
-                imageUrl: "biased_leader.jpg",
-                imageBiasExplanation: "Racial Bias: The model consistently generated a white male in a suit, failing to represent women or leaders from non-Western/non-dominant ethnic groups as 'powerful' without further specification."
+            nurse_bias: {
+                title: "Nurse Bias (Compassionate Nurse)",
+                prompt: "Hospital Nurse assisting a patient",
+                output: "All generated images show female nurses, regardless of the prompt not specifying gender.",
+                images: ["images/nurse_images/nurse1.webp", "images/nurse_images/nurse2.webp", "images/nurse_images/nurse3.webp"],
+                imageBiasExplanation: "<strong>Occupational Gender Stereotyping:</strong> Every single generated image depicts a woman.<br><br>This is a classic example of bias where the model has learned a strong mathematical correlation between the word 'Nurse' and 'Female.' It effectively erases male nurses from the profession in its visual imagination, reinforcing traditional gender roles."
             }
         };
 
@@ -448,10 +464,35 @@
             html += "<br/><strong>Prompt:</strong><br/>";
             html += "<span style='color: var(--text-muted);'>" + ex.prompt + "</span><br/><br/>";
             html += "<strong>Model Output:</strong><br/>";
-            html += "<div class='image-output-box'>";
-            html += '<img src="' + ex.imageUrl + '" alt="Case-study output image" style="max-width: 100%; border-radius: 4px; margin-top: 12px; height: auto; object-fit: cover;"/>';
-            html += "</div>";
-            html += "</div>";
+
+            // Removed .image-output-box wrapper customization as requested
+            html += "<div style='margin-top: 12px;'>";
+
+            if (ex.groups) {
+                // Comparison Layout: Two stacked groups
+                ex.groups.forEach(group => {
+                    html += "<div style='margin-bottom: 20px;'>";
+                    html += "<div style='font-size: 0.9em; font-weight: bold; margin-bottom: 8px; color: var(--text-heading);'>" + group.label + "</div>";
+                    html += "<div style='display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;'>";
+                    group.images.forEach(src => {
+                        html += '<img src="' + src + '" alt="Generated Image" style="width: 100%; border-radius: 4px; height: auto; object-fit: cover; border: 1px solid var(--border);"/>';
+                    });
+                    html += "</div></div>";
+                });
+            } else if (ex.images) {
+                // Single Group: Grid of 3
+                html += "<div style='display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;'>";
+                ex.images.forEach(src => {
+                    html += '<img src="' + src + '" alt="Generated Image" style="width: 100%; border-radius: 4px; height: auto; object-fit: cover; border: 1px solid var(--border);"/>';
+                });
+                html += "</div>";
+            } else {
+                // Fallback for single image legacy data
+                html += '<img src="' + ex.imageUrl + '" alt="Case-study output image" style="max-width: 100%; border-radius: 4px; margin-top: 12px; height: auto; object-fit: cover; border: 1px solid var(--border);"/>';
+            }
+
+            html += "</div>"; // End wrapper
+            html += "</div>"; // End content col
 
             // RIGHT COLUMN
             html += "<div class='case-explanation'>";
@@ -462,10 +503,6 @@
             html += "</div>"; // End layout
 
             container.innerHTML = html;
-
-            // IMPORTANT: Update the drag-and-drop target to be the NEW image container when this tab is selected.
-            // For simplicity, we keep the original target for the button to focus on the text examples.
-            // We will leave the drag target focused on the text examples as originally requested.
         }
 
         // Initialize the new image example on page load
