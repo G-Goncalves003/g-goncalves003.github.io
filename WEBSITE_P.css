@@ -476,41 +476,81 @@ button.btn-secondary:hover {
     background: rgba(231, 76, 60, 0.03);
 }
 
-/* FIXED EXAMPLE */
-/* FIXED EXAMPLE */
+/* =========================================
+   FIXED EXAMPLE (Bias Case Studies)
+   ========================================= */
+
+/* The Container Box */
 .fixed-example {
     margin-top: 12px;
     padding: 32px;
     border-radius: 12px;
-    /* Gradient: Grey-Blue to Orange with 0.15 opacity */
     background: linear-gradient(135deg, rgba(96, 123, 143, 0.15), rgba(233, 127, 74, 0.15));
     border: 1px solid rgba(96, 123, 143, 0.3);
     font-size: 18px;
     line-height: 1.6;
+    transition: all 0.3s ease;
 }
 
+/* The Grid Layout Wrapper */
 .case-study-layout {
     display: grid;
+    /* Default to Mobile (Stacked) first */
     grid-template-columns: 1fr;
     gap: 20px;
+    align-items: start;
 }
 
-@media (min-width: 768px) {
-    .case-study-layout {
-        grid-template-columns: 1.5fr 1fr;
-    }
+/* Left Column: Text/Image Content */
+.case-content {
+    width: 100%;
 }
 
+/* Right Column: The Explanation */
 .case-explanation {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
     border-left: 2px solid var(--border);
     padding-left: 20px;
+    transition: all 0.4s ease-in-out;
+    /* Mobile Default: Always visible */
+    opacity: 1;
+    filter: none;
 }
 
-/* Show explanation on hover of the container */
-.fixed-example:hover .case-explanation {
-    opacity: 1;
+/* =========================================
+   DESKTOP RULES (Screens wider than 768px)
+   ========================================= */
+@media (min-width: 768px) {
+
+    /* Switch to Side-by-Side Layout */
+    .case-study-layout {
+        grid-template-columns: 1.5fr 1fr;
+        /* Left is wider than Right */
+    }
+
+    /* Hide the explanation initially */
+    .case-explanation {
+        opacity: 0.1;
+        /* Almost invisible */
+        filter: blur(4px);
+        /* Blurred */
+        user-select: none;
+        /* Can't copy text */
+        cursor: help;
+        /* Show question mark cursor */
+    }
+
+    /* Reveal on Hover */
+    .fixed-example:hover .case-explanation {
+        opacity: 1;
+        filter: blur(0);
+        user-select: auto;
+    }
+
+    /* Highlight box on Hover */
+    .fixed-example:hover {
+        background: linear-gradient(135deg, rgba(96, 123, 143, 0.25), rgba(233, 127, 74, 0.25));
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 }
 
 /* ADD THIS NEW CSS BLOCK */
