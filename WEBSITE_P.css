@@ -4,7 +4,7 @@
     /* Palette */
     --c-blue: #434E78;
     --c-greyblue: #607B8F;
-    --c-yellow: #F7E396;
+    --c-yellow: #fdefb9;
     --c-orange: #E97F4A;
     --c-white: #ffffff;
     --c-offwhite: #f8f9fa;
@@ -644,8 +644,9 @@ footer p {
 
 /* THEME SWITCH SLIDER */
 .theme-switch-wrapper {
-    position: fixed;
-    top: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     right: 20px;
     display: flex;
     align-items: center;

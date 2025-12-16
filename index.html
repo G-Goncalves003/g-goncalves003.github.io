@@ -9,54 +9,8 @@
 </head>
 
 <body>
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-sun">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-moon">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </div>
-        </label>
-    </div>
-    <script>
-        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-        const currentTheme = localStorage.getItem('theme');
 
-        if (currentTheme) {
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            if (currentTheme === 'dark') {
-                toggleSwitch.checked = true;
-            }
-        }
 
-        function switchTheme(e) {
-            if (e.target.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        toggleSwitch.addEventListener('change', switchTheme);
-    </script>
     <header>
         <div class="header-content">
             <h1>Who's the Outcast(e)?</h1>
@@ -74,11 +28,36 @@
         <a href="#understanding-biases">Understanding Biases</a>
         <a href="#try-it-yourself">Try It Yourself</a>
         <a href="#conclusion">Conclusion</a>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-sun">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-moon">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </div>
+            </label>
+        </div>
     </nav>
 
     <div class="page">
         <!-- INTRODUCTION -->
-        <section id="introduction">
+        <section id="introduction" style="margin-bottom: 0; padding-bottom: 0;">
             <h2>Introduction</h2>
             <p>In this interactive experience, you will explore the hidden biases present in state-of-the-art AI
                 models—biases that often go unnoticed by the general audience but have significant real-world
@@ -306,10 +285,6 @@
             <div style="text-align: center; margin-top: 40px;">
                 <img src="comunity_holding_hands.jpg" alt="Community Holding Hands"
                     style="max-width: 100%; border-radius: 8px; box-shadow: var(--shadow-md);">
-                <p
-                    style="margin-top: 24px; font-style: italic; font-weight: 500; font-size: 20px; color: var(--text-dark);">
-                    "Everyone is unique, but no one needs to be excluded"
-                </p>
             </div>
         </section>
 
@@ -329,6 +304,29 @@
         </div>
     </footer>
     <script src="config.py"></script>
+    <script>
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme);
+    </script>
     <script>
         /***********************
          * FIXED EXAMPLES DATA (with Bias Explanations)
@@ -381,12 +379,12 @@
             }
 
             let html = "";
-            html += "<strong style='color: var(--primary); font-size: 15px;'>" + ex.title + "</strong><br/>";
-            html += "<br/><strong>Prompt:</strong><br/>";
-            html += "<span style='color: var(--text-muted);'>" + ex.prompt + "</span><br/><br/>";
-            html += "<strong>Model Output:</strong><br/>";
+            html += "<strong style='color: var(--primary); font-size: 18px;'>" + ex.title + "</strong><br/>";
+            html += "<br/><strong style='font-size: 16px;'>Prompt:</strong><br/>";
+            html += "<span style='color: var(--text-muted); font-size: 16px;'>" + ex.prompt + "</span><br/><br/>";
+            html += "<strong style='font-size: 16px;'>Model Output:</strong><br/>";
             // CRITICAL CHANGE: Apply the new .output-display class for height constraint
-            html += "<div class='output-display' style='background: var(--bg-card); padding: 8px; border-radius: 4px; margin-top: 8px; border-left: 3px solid var(--primary);'>" + ex.output + "</div>";
+            html += "<div class='output-display' style='background: var(--bg-card); padding: 12px; border-radius: 4px; margin-top: 8px; border-left: 3px solid var(--primary); font-size: 16px;'>" + ex.output + "</div>";
 
             if (ex.imageUrl) {
                 html += '<br/><img src="' + ex.imageUrl + '" alt="Case-study output image" style="max-width: 100%; border: 1px solid var(--border); border-radius: 4px; margin-top: 12px;" />';
@@ -487,10 +485,10 @@
             }
 
             let html = "";
-            html += "<strong style='color: var(--primary); font-size: 15px;'>" + ex.title + "</strong><br/>";
-            html += "<br/><strong>Prompt:</strong><br/>";
-            html += "<span style='color: var(--text-muted);'>" + ex.prompt + "</span><br/><br/>";
-            html += "<strong>Model Output:</strong><br/>";
+            html += "<strong style='color: var(--primary); font-size: 18px;'>" + ex.title + "</strong><br/>";
+            html += "<br/><strong style='font-size: 16px;'>Prompt:</strong><br/>";
+            html += "<span style='color: var(--text-muted); font-size: 16px;'>" + ex.prompt + "</span><br/><br/>";
+            html += "<strong style='font-size: 16px;'>Model Output:</strong><br/>";
 
             // This is the image display area
             html += "<div style='text-align: center; border: 1px dashed var(--border); padding: 10px; border-radius: 4px; background: var(--bg-card);'>";
