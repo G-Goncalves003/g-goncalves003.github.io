@@ -59,9 +59,13 @@
         <!-- INTRODUCTION -->
         <section id="introduction" style="margin-bottom: 0; padding-bottom: 0;">
             <h2>Introduction</h2>
-            <p>In this interactive experience, you will explore the hidden biases present in state-of-the-art AI
-                models that often go unnoticed by the general audience but have significant real-world
-                implications.</p>
+            <p>While AI researchers recognize that bias is complex and systemic, the general public often views algorithms as "neutral" or "objective." This creates a dangerous gap in awareness.</p>
+            
+            <p>Inspired by the findings of our <strong><a href="https://www.technologyreview.com/2025/10/01/1124621/openai-india-caste-bias/" target="_blank" style="color: var(--primary); text-decoration: underline;">Caste Bias Case Study</a></strong>, we created this website as an accessible gateway for users to explore these issues.</p>
+            
+            <p>The title <strong>"Who's the Outcast(e)?"</strong> is a deliberate play on words: it refers to those marginalized as "outcasts" and specifically investigates how the <strong>Caste System</strong>—a deep-seated social hierarchy—is mirrored and reinforced by Generative AI.</p>
+
+            <p>Our goal is to move you from the ideal that "AI is magic" toward a critical mindset, showing that these models require extra care and verification. For a deep dive, read our full <strong><a href="URL_DO_VOSSO_BLOG" target="_blank" style="color: var(--primary); text-decoration: underline;">Blog Post</a></strong>.</p>
         </section>
 
         <!-- HOW MODELS WORK -->
@@ -242,10 +246,14 @@
         <!-- TRY IT YOURSELF -->
         <section id="try-it-yourself">
             <h2>Try it Yourself!</h2>
-            <p style="margin-bottom: 24px;">Now let's move on to the fun part! In this section, you can test both text
-                and image generation models directly using the interactive
-                interface below. We advise you to run this part on a computer, since these models run locally on your
-                machine.</p>
+            <p style="margin-bottom: 24px;">Now it's your turn to experiment. We have structured this playground to be a lighter, interactive medium for you to see these concepts in action.</p>
+
+            <h3 style="font-size: 1.1em; margin-bottom: 10px;">About the Sandbox Models:</h3>
+            <p style="font-size: 14px; margin-bottom: 10px;">To allow you to test these concepts directly on this page, we are using two specialized models that run locally in your browser:</p>
+            <ul style="font-size: 14px; margin-bottom: 24px;">
+                <li><strong>SmolLM2:</strong> A compact, high-efficiency Language Model used to generate text responses. Find out more about this model <strong><a href="https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct" target="_blank" style="color: var(--primary); text-decoration: underline;">here</a></strong>. </li>
+                <li><strong>SDXL-Turbo:</strong> A fast-iteration image model that visualizes how prompts are transformed into pixels in real-time. Find out more about this model <strong><a href="https://huggingface.co/stabilityai/sdxl-turbo" target="_blank" style="color: var(--primary); text-decoration: underline;">here</a></strong>. </li>
+            </ul>
 
             <div style="width: 100%; display: flex; justify-content: center; margin-top: 24px;">
                 <iframe src="https://bluept-space-for-bias-testing.hf.space" frameborder="0" width="850" height="900"
@@ -258,11 +266,12 @@
                     style="background: none; border: none; padding: 0; font-weight: bold; color: var(--warning); display: inline;">
                     Important Note:</span>
                 <span style="display: inline; margin-left: 8px;">
-                    Depending on the prompt and the model configuration, the output may or may not exhibit
-                    discriminatory
-                    patterns. The same prompt can sometimes yield different responses due to the models' inherent
-                    stochasticity and training variations.
+                    Outputs may vary due to the models' inherent stochasticity. The goal is to develop <strong>critical thinking</strong> when using any AI tool.
                 </span>
+            </div>
+
+            <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border);">
+                <p>Beyond this sandbox, we encourage you to take the prompts from our examples and test them on any major AI model you use—such as <strong>ChatGPT, Claude, Gemini,</strong> or image generators like <strong>Sora and Nano Banana</strong>. You will likely find that even the most famous models still exhibit these systemic cultural prejudices, proving that bias is a challenge across the entire industry.</p>
             </div>
         </section>
 
