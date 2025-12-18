@@ -14,7 +14,7 @@
     <header>
         <div class="header-content">
             <h1>Who's the Outcast(e)?</h1>
-            <p>Investigating Bias in Generative AI Models</p>
+            <p>Investigating Cultural Bias in Generative AI Models</p>
         </div>
     </header>
 
@@ -246,22 +246,32 @@
         <!-- TRY IT YOURSELF -->
         <section id="try-it-yourself">
             <h2>Try it Yourself!</h2>
-            <p style="margin-bottom: 24px;">Now it's your turn to experiment. We have structured this playground to be a
+            <p style="margin-bottom: 24px;">Now it's your turn to experiment! We have structured this playground to be a
                 lighter, interactive medium for you to see these concepts in action.</p>
 
             <h3 style="font-size: 1.1em; margin-bottom: 10px;">About the Sandbox Models:</h3>
             <p style="font-size: 14px; margin-bottom: 10px;">To allow you to test these concepts directly on this page,
-                we are using two specialized models that run locally:</p>
+                we are using two specialized models:</p>
             <ul style="font-size: 14px; margin-bottom: 24px;">
                 <li><strong>SmolLM2:</strong> A compact, high-efficiency Language Model used to generate text responses.
                     Find out more about this model <strong><a
                             href="https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct" target="_blank"
                             style="color: var(--primary); text-decoration: underline;">here</a></strong>. </li>
-                <li><strong>SDXL-Turbo:</strong> A fast-iteration image model that visualizes how prompts are
-                    transformed into pixels in real-time. Find out more about this model <strong><a
+                <li><strong>SDXL-Turbo:</strong> A fast-iteration diffusion model used to generate image responses from text.
+                    Find out more about this model <strong><a
                             href="https://huggingface.co/stabilityai/sdxl-turbo" target="_blank"
                             style="color: var(--primary); text-decoration: underline;">here</a></strong>. </li>
             </ul>
+            
+            <div style="text-align: center; margin-top: 24px;">
+                <span class="tooltip-trigger"
+                    style="background: none; border: none; padding: 0; font-weight: bold; color: var(--warning); display: inline;">
+                    Warning:</span>
+                <span style="display: inline; margin-left: 8px;">
+                    The following experience is heavily recommended to be done on a computer, <br>
+                    as response times depend on your device's computational power.
+                </span>
+            </div>
 
             <div style="width: 100%; display: flex; justify-content: center; margin-top: 24px;">
                 <iframe src="https://bluept-space-for-bias-testing.hf.space" frameborder="0" width="850" height="900"
@@ -274,15 +284,15 @@
                     style="background: none; border: none; padding: 0; font-weight: bold; color: var(--warning); display: inline;">
                     Important Note:</span>
                 <span style="display: inline; margin-left: 8px;">
-                    Outputs may vary due to the models' inherent stochasticity. The goal is to develop <strong>critical
+                    Outputs for the same prompt are almost never identical due to the models' inherent randomness. The goal is to develop <strong>critical
                         thinking</strong> when using any AI tool.
                 </span>
             </div>
 
             <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border);">
                 <p>Beyond this sandbox, we encourage you to take the prompts from our examples and test them on any
-                    major AI model you use, such as <strong>ChatGPT, Claude, Gemini,</strong> or image generators like
-                    <strong>Sora and Nano Banana</strong>. You will likely find that even the most famous models still
+                    major AI model you use, such as <strong>ChatGPT, Claude, Perplexity and Gemini,</strong> or image generators like
+                    <strong>Sora, Dall-E and Nano Banana</strong>. You will likely find that even some of the most famous models still
                     exhibit these systemic cultural prejudices, proving that bias is a challenge across the entire
                     industry.
                 </p>
@@ -315,10 +325,10 @@
                 <li><strong>Question the Patterns:</strong> If an AI result feels like an unfair stereotype,
                     it probably is. Always ask yourself: "Does this represent everyone fairly?"</li>
                 <li><strong>Spot the "Hallucinations":</strong> AI can sometimes make up facts that sound very
-                    convincing. Always verify important dates, citations, or names using trusted books or official
+                    convincing. Always verify important dates, citations, names or other information with trusted books or official
                     sources.</li>
                 <li><strong>Stay Critical:</strong> Use AI to brainstorm or explore, but always make the final decision
-                    yourself. Your unique perspective and ethics are things no algorithm can replicate.</li>
+                    yourself. Your unique perspective and ethics are qualities no algorithm can replicate.</li>
             </ul>
 
         </section>
